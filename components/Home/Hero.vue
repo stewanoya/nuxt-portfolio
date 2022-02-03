@@ -1,0 +1,139 @@
+<template>
+  <main class="hero-container">
+    <div class="first-name">
+      STEW
+      <span class="adjectives-first">
+        <p>Developer</p>
+        <p>Educator</p>
+        <p>Mentor</p>
+      </span>
+    </div>
+    <div class="last-name">
+      <span class="adjectives-last">
+        <p>Learner</p>
+        <p>Coach</p>
+        <p>Creator</p>
+      </span>
+      ANOYA
+      <!-- <div class="left-big-circle shadow-xl"></div>
+    <div class="left-small-circle"></div> -->
+    </div>
+    <div class="right-big-circle shadow-xl"></div>
+    <div class="right-small-circle"></div>
+    <div class="bottom-circle">
+      <h1 class="projects-title">PROJECTS</h1>
+    </div>
+  </main>
+</template>
+
+<style scoped>
+.hero-container {
+  height: calc(100vh - 5rem);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-big-circle {
+  width: 12rem;
+  height: 12rem;
+  background-color: #ffd9a0;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -6rem;
+  z-index: 2;
+}
+
+.left-small-circle {
+  width: 7rem;
+  height: 7rem;
+  background-color: #ffbe5e;
+  border-radius: 50%;
+  position: absolute;
+  top: 5rem;
+  left: 2rem;
+  z-index: 1;
+}
+
+.right-big-circle {
+  width: 16rem;
+  height: 16rem;
+  background-color: #ffd9a0;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: -8rem;
+  z-index: 5;
+}
+
+.right-small-circle {
+  width: 6rem;
+  height: 6rem;
+  background-color: #ffbe5e;
+  border-radius: 50%;
+  position: absolute;
+  top: 0rem;
+  right: 5rem;
+  z-index: 1;
+}
+
+.first-name,
+.last-name {
+  font-family: 'Red Hat Text';
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1;
+  width: 47.5rem;
+  color: #413f4c;
+}
+
+.first-name {
+  display: flex;
+  text-align: left;
+  justify-content: flex-start;
+  z-index: 10;
+  margin-top: 5rem;
+  margin-inline: 1rem;
+}
+
+.last-name {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 10;
+}
+
+.adjectives-first,
+.adjectives-last {
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Quicksand';
+  font-size: 1.25rem;
+  justify-content: space-evenly;
+  margin-inline: 0.5rem;
+}
+
+.bottom-circle {
+  width: 100%;
+  height: 14rem;
+  background-color: #ffd9a0;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -7rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.projects-title {
+  font-family: 'Red Hat Text';
+  font-weight: 900;
+  color: white;
+  font-size: 5rem;
+}
+</style>
