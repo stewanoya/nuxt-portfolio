@@ -46,21 +46,15 @@
   top: 0;
   right: -8rem;
   z-index: 5;
-  animation: float1 10s ease-in-out infinite;
-  transform-origin: left;
+  animation: fade 2s ease-in-out;
 }
-@keyframes float1 {
+@keyframes fade {
   0% {
     opacity: 0;
-    transform: translate(0);
   }
 
-  50% {
-    opacity: 1;
-    transform: translate(-3rem, 2rem);
-  }
   100% {
-    transform: translate(0);
+    opacity: 1;
   }
 }
 
@@ -73,22 +67,16 @@
   top: 0rem;
   right: 5rem;
   z-index: 1;
-  animation: float2 10s ease-in-out infinite;
-  transform-origin: left;
+  animation: fade 2s ease-in-out;
 }
 
-@keyframes float2 {
+@keyframes fade {
   0% {
     opacity: 0;
-    transform: translate(0);
   }
 
-  50% {
-    opactiy: 1;
-    transform: translate(2rem, 1rem);
-  }
   100% {
-    transform: translate(0);
+    opacity: 1;
   }
 }
 
@@ -186,6 +174,7 @@
   font-family: 'Red Hat Text';
   font-weight: 900;
   color: white;
-  font-size: 5rem;
+  font-size: 6rem;
+  margin-top: -1rem;
 }
 </style>
