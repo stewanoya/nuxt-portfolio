@@ -22,7 +22,7 @@
           /></a>
           <p class="project-description">{{ project.desc }}</p>
         </div>
-        <div class="project-footer">
+        <div class="project-footer shadow-lg">
           <ul class="tech-stack-list">
             <li
               class="tech-stack-item"
@@ -51,7 +51,9 @@ export default {
 <style scoped>
 .project-container {
   background-color: #ffd9a0;
-  height: 34rem;
+  height: min-content;
+  padding-inline: 5rem;
+  padding-bottom: 4rem;
 }
 .project-list {
   display: grid;
@@ -121,7 +123,7 @@ export default {
 
 .project-body {
   padding: 1rem 2rem;
-  height: 15.5rem;
+  height: 10rem;
   overflow: hidden;
   overflow-y: scroll;
   position: relative;
@@ -136,14 +138,14 @@ export default {
 .project-card::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 5.5rem;
   left: 0;
   height: 12%;
   width: 100%;
   background: linear-gradient(
     rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.575),
-    rgba(255, 255, 255, 0.692),
+    rgba(255, 255, 255, 0.705),
+    rgba(255, 255, 255, 0.829),
     rgb(255, 255, 255)
   );
   z-index: 10;
@@ -180,7 +182,7 @@ export default {
 }
 
 .tech-stack-item {
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   margin: 0.1rem;
   height: min-content;
   text-align: center;
@@ -188,5 +190,7 @@ export default {
   background-color: #ffbe5e;
   border-radius: 0.85rem;
   color: white;
+  font-style: 'Red Hat Text';
+  font-weight: 900;
 }
 </style>

@@ -158,7 +158,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  animation: fadeinUp 2s ease-in-out;
+  animation: fadeinUp 4s ease-in-out;
 }
 
 @keyframes fadeinUp {
