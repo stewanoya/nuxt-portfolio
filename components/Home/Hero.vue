@@ -37,28 +37,6 @@
   align-items: center;
 }
 
-.left-big-circle {
-  width: 12rem;
-  height: 12rem;
-  background-color: #ffd9a0;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: -6rem;
-  z-index: 2;
-}
-
-.left-small-circle {
-  width: 7rem;
-  height: 7rem;
-  background-color: #ffbe5e;
-  border-radius: 50%;
-  position: absolute;
-  top: 5rem;
-  left: 2rem;
-  z-index: 1;
-}
-
 .right-big-circle {
   width: 16rem;
   height: 16rem;
@@ -68,6 +46,22 @@
   top: 0;
   right: -8rem;
   z-index: 5;
+  animation: float1 10s ease-in-out infinite;
+  transform-origin: left;
+}
+@keyframes float1 {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-3rem, 2rem);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
 
 .right-small-circle {
@@ -79,6 +73,23 @@
   top: 0rem;
   right: 5rem;
   z-index: 1;
+  animation: float2 10s ease-in-out infinite;
+  transform-origin: left;
+}
+
+@keyframes float2 {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+
+  50% {
+    opactiy: 1;
+    transform: translate(2rem, 1rem);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
 
 .first-name,
@@ -98,6 +109,18 @@
   z-index: 10;
   margin-top: 5rem;
   margin-inline: 1rem;
+  animation: fadeinRight 1s ease-in-out;
+}
+
+@keyframes fadeinRight {
+  from {
+    transform: translateX(-3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .last-name {
@@ -105,6 +128,17 @@
   display: flex;
   justify-content: flex-end;
   z-index: 10;
+  animation: fadeinLeft 1s ease-in-out;
+}
+@keyframes fadeinLeft {
+  from {
+    transform: translateX(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .adjectives-first,
@@ -118,6 +152,14 @@
   margin-inline: 0.5rem;
 }
 
+.adjectives-first {
+  animation: fadeinRight 2s ease-in-out;
+}
+
+.adjectives-last {
+  animation: fadeinLeft 2s ease-in-out;
+}
+
 .bottom-circle {
   width: 100%;
   height: 14rem;
@@ -128,6 +170,16 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  animation: fadeinUp 2s ease-in-out;
+}
+
+@keyframes fadeinUp {
+  from {
+    transform: translateY(10rem);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .projects-title {

@@ -21,6 +21,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: slideinNav 4s ease-in-out;
+}
+
+@keyframes slideinNav {
+  from {
+    transform: translateY(-10rem);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .nav-list {
