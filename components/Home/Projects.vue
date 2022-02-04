@@ -22,7 +22,7 @@
           /></a>
           <p class="project-description">{{ project.desc }}</p>
         </div>
-        <div class="project-footer shadow-lg">
+        <div class="project-footer">
           <ul class="tech-stack-list">
             <li
               class="tech-stack-item"
