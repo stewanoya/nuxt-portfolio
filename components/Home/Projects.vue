@@ -71,12 +71,6 @@ export default {
 .project-header {
   width: 100%;
   height: 9.5rem;
-  background-color: #ffbe5e;
-  text-align: center;
-  font-family: 'Red Hat Text';
-  font-weight: 600;
-  font-size: 1.75rem;
-  color: white;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -85,6 +79,11 @@ export default {
 }
 
 .project-title {
+  text-align: center;
+  font-family: 'Red Hat Text';
+  font-weight: 800;
+  font-size: 3rem;
+  color: white;
   width: 100%;
   color: white;
   position: relative;
