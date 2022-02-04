@@ -22,6 +22,17 @@
           /></a>
           <p class="project-description">{{ project.desc }}</p>
         </div>
+        <div class="project-footer">
+          <ul class="tech-stack-list">
+            <li
+              class="tech-stack-item"
+              v-for="stackItem in project.techStack"
+              :key="stackItem"
+            >
+              {{ stackItem }}
+            </li>
+          </ul>
+        </div>
       </article>
     </div>
   </section>
@@ -98,10 +109,10 @@ export default {
 .project-header::after {
   content: '';
   position: absolute;
-  height: 7rem;
-  width: 25rem;
-  bottom: -5rem;
-  left: -3rem;
+  height: 5rem;
+  width: 150%;
+  bottom: -4rem;
+  left: -6rem;
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
   z-index: 1;
@@ -110,7 +121,7 @@ export default {
 
 .project-body {
   padding: 1rem 2rem;
-  height: 14.5rem;
+  height: 15.5rem;
   overflow: hidden;
   overflow-y: scroll;
   position: relative;
@@ -127,12 +138,13 @@ export default {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 15%;
+  height: 12%;
   width: 100%;
   background: linear-gradient(
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0.575),
-    white
+    rgba(255, 255, 255, 0.692),
+    rgb(255, 255, 255)
   );
   z-index: 10;
 }
@@ -141,6 +153,7 @@ export default {
   font-family: 'Quicksand';
   font-weight: 500;
   color: #413f4c;
+  margin-bottom: 1rem;
 }
 
 .project-link {
@@ -153,5 +166,27 @@ export default {
 .github-icon {
   width: 3rem;
   aspect-ratio: 1;
+}
+
+.project-footer {
+  background-color: white;
+  padding: 1rem 2rem;
+}
+
+.tech-stack-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tech-stack-item {
+  font-size: 0.75rem;
+  margin: 0.1rem;
+  height: min-content;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  background-color: #ffbe5e;
+  border-radius: 0.85rem;
+  color: white;
 }
 </style>
