@@ -1,18 +1,30 @@
 <template>
   <nav class="nav-container">
     <ul class="nav-list rounded-full shadow-lg">
-      <nuxt-link to="/" class="nav-item">
-        <li>Home</li>
-      </nuxt-link>
-      <nuxt-link to="/about" class="nav-item">
-        <li>About</li>
-      </nuxt-link>
-      <nuxt-link to="/blog" class="nav-item">
-        <li>Blog</li>
+      <nuxt-link
+        v-for="(navItem, index) in navList"
+        :key="index"
+        class="nav-item"
+        :to="navItem.route"
+      >
+        <li :class="{ navSelected: selected === index }">{{ navItem.name }}</li>
       </nuxt-link>
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  computed: {
+    navList() {
+      return this.$store.state.nav.navList
+    },
+    selected() {
+      return this.$store.state.nav.selected
+    },
+  },
+}
+</script>
 
 <style scoped>
 .nav-container {
@@ -50,5 +62,9 @@
   font-family: 'Quicksand';
   font-weight: 600;
   color: #413f4c;
+}
+
+.navSelected {
+  background-color: red;
 }
 </style>
