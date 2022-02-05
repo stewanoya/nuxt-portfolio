@@ -6,3 +6,9 @@ export const state = () => ({
   ],
   selected: 0,
 })
+
+export const mutations = {
+  setSelected(state, index) {
+    state.selected = index
+  },
+}

@@ -7,7 +7,12 @@
         class="nav-item"
         :to="navItem.route"
       >
-        <li :class="{ navSelected: selected === index }">{{ navItem.name }}</li>
+        <li
+          @click="selector(index)"
+          :class="{ navSelected: selected === index }"
+        >
+          {{ navItem.name }}
+        </li>
       </nuxt-link>
     </ul>
   </nav>
@@ -21,6 +26,11 @@ export default {
     },
     selected() {
       return this.$store.state.nav.selected
+    },
+  },
+  methods: {
+    selector(index) {
+      this.$store.commit('nav/setSelected', index)
     },
   },
 }
