@@ -46,15 +46,18 @@
   top: 0;
   right: -8rem;
   z-index: 5;
-  animation: fade 2s ease-in-out;
+  animation: fade 2s ease-in-out, float1 6s ease-in-out infinite;
 }
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
 
+@keyframes float1 {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(5px, 10px);
+  }
   100% {
-    opacity: 1;
+    transform: translate(0px, 0px);
   }
 }
 
@@ -67,15 +70,27 @@
   top: 0rem;
   right: 5rem;
   z-index: 1;
-  animation: fade 2s ease-in-out;
+  animation: fade 5s ease-in-out, float2 6s ease-in-out infinite;
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-10px, 5px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 @keyframes fade {
-  0% {
+  from {
     opacity: 0;
   }
 
-  100% {
+  to {
     opacity: 1;
   }
 }
