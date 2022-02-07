@@ -6,13 +6,15 @@
         :key="index"
         class="nav-item"
         :to="navItem.route"
+        v-on:click.native="selector(index)"
       >
-        <li
-          @click="selector(index)"
-          :class="{ navSelected: selected === index }"
-        >
+        <li>
           {{ navItem.name }}
         </li>
+        <div
+          class="shadow-2xl"
+          :class="{ navSelected: selected === index }"
+        ></div>
       </nuxt-link>
     </ul>
   </nav>
@@ -43,7 +45,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: slideinNav 4s ease-in-out;
+  animation: slideinNav 2s ease-in-out;
 }
 
 @keyframes slideinNav {
@@ -65,6 +67,7 @@ export default {
   background-color: #ffbe5e;
   z-index: 999999;
   position: sticky;
+  overflow: hidden;
 }
 
 .nav-item {
@@ -72,9 +75,29 @@ export default {
   font-family: 'Quicksand';
   font-weight: 600;
   color: #413f4c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .navSelected {
-  background-color: red;
+  background-color: #ffd9a0;
+  width: 4rem;
+  height: 0.25rem;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 1.5rem;
+  z-index: -1;
+  animation: grow 0.2s ease-in-out;
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 4rem;
+  }
 }
 </style>

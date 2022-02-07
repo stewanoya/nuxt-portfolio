@@ -20,7 +20,7 @@
               class="github-icon"
               src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
           /></a>
-          <p class="project-description">{{ project.desc }}</p>
+          <p class="project-description not-shown">{{ project.desc }}</p>
         </div>
         <div class="project-footer">
           <ul class="tech-stack-list">
@@ -111,7 +111,7 @@ export default {
   content: '';
   position: absolute;
   height: 5rem;
-  width: 150%;
+  width: 33rem;
   bottom: -4rem;
   left: -6rem;
   border-radius: 50%;
