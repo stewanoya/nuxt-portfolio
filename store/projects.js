@@ -10,6 +10,7 @@ export const state = () => ({
       desc: 'sQuiz Game is an app that allows users to make quizzes, take quizzes and share results with friends. A user can search for quizzes, as well as make their quizzes public or private. Users can see the results of their recent attempt and share that result with friends.',
       github: 'https://github.com/stewanoya/sQuiz-Game',
       techStack: ['jQuery', 'Express', 'SASS', 'Node', 'PSQL', 'EJS'],
+      expanded: false,
     },
     {
       id: 2,
@@ -28,6 +29,7 @@ export const state = () => ({
         'JWT',
         'Material UI',
       ],
+      expanded: false,
     },
     {
       id: 3,
@@ -45,6 +47,7 @@ export const state = () => ({
         'Cypress',
         'SASS',
       ],
+      expanded: false,
     },
   ],
 })
@@ -59,4 +62,8 @@ export const getters = {}
 export const actions = {}
 // mutations
 // synchronous, happens instantly
-export const mutations = {}
+export const mutations = {
+  toggleExpand(state, index) {
+    state.projectList[index].expanded = !state.projectList[index].expanded
+  },
+}

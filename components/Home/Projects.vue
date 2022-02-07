@@ -3,14 +3,18 @@
     <div class="project-list">
       <article
         class="project-card shadow-lg"
-        v-for="project in projectList"
+        v-for="(project, index) in projectList"
         :key="project.id"
       >
         <div class="project-header">
           <h1 class="project-title">{{ project.name }}</h1>
           <img class="project-image" :src="project.image" />
         </div>
-        <div class="project-body">
+        <div
+          :class="
+            project.expanded ? 'project-body-show' : 'project-body-hidden'
+          "
+        >
           <a
             :href="project.github"
             class="project-link"
@@ -20,7 +24,7 @@
               class="github-icon"
               src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
           /></a>
-          <p class="project-description not-shown">{{ project.desc }}</p>
+          <p class="project-description">{{ project.desc }}</p>
         </div>
         <div class="project-footer">
           <ul class="tech-stack-list">
@@ -32,6 +36,12 @@
               {{ stackItem }}
             </li>
           </ul>
+        </div>
+        <div class="expand-button-container">
+          <button
+            :class="project.expanded ? 'up-arrow' : 'down-arrow'"
+            @click="expand(index)"
+          ></button>
         </div>
       </article>
     </div>
@@ -45,6 +55,11 @@ export default {
       return this.$store.state.projects.projectList
     },
   },
+  methods: {
+    expand(index) {
+      this.$store.commit('projects/toggleExpand', index)
+    },
+  },
 }
 </script>
 
@@ -52,20 +67,25 @@ export default {
 .project-container {
   background-color: #ffd9a0;
   height: min-content;
+  min-height: 30rem;
   padding-inline: 5rem;
   padding-bottom: 4rem;
 }
 .project-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .project-card {
   background-color: white;
   margin: 1rem;
-  border-radius: 0.25rem;
-  height: 25rem;
+  height: fit-content;
+  min-height: 13rem;
+  border-radius: 2rem;
   position: relative;
+  flex-basis: 30%;
 }
 
 .project-header {
@@ -75,14 +95,14 @@ export default {
   overflow: hidden;
   display: flex;
   align-items: center;
-  border-radius: 0.25rem 0.25rem 0 0;
+  border-radius: 2rem 2rem 0 0;
 }
 
 .project-title {
   text-align: center;
   font-family: 'Red Hat Text';
   font-weight: 800;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: white;
   width: 100%;
   color: white;
@@ -107,47 +127,27 @@ export default {
   z-index: 1;
 }
 
-.project-header::after {
-  content: '';
-  position: absolute;
-  height: 5rem;
-  width: 33rem;
-  bottom: -4rem;
-  left: -6rem;
-  border-radius: 50%;
-  background-color: rgb(255, 255, 255);
-  z-index: 1;
-  box-shadow: 0 -1rem 3rem 0.05rem rgba(15, 15, 15, 0.562);
-}
-
-.project-body {
-  padding: 1rem 2rem;
-  height: 10rem;
-  overflow: hidden;
+.project-body-show {
   overflow-y: scroll;
-  position: relative;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  height: 8rem;
+  padding: 1rem;
+  animation: growDown 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-.project-body::-webkit-scrollbar {
-  display: none;
+@keyframes growDown {
+  from {
+    margin-top: -8rem;
+  }
+  to {
+    margin-top: 0;
+  }
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  bottom: 5.5rem;
-  left: 0;
-  height: 12%;
-  width: 100%;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.705),
-    rgba(255, 255, 255, 0.829),
-    rgb(255, 255, 255)
-  );
-  z-index: 10;
+.project-body-hidden {
+  visibility: hidden;
+  height: 0rem;
+  overflow: hidden;
+  transition: height 0.5s ease;
 }
 
 .project-description {
@@ -171,19 +171,20 @@ export default {
 
 .project-footer {
   background-color: white;
-  padding: 1rem 2rem;
+  position: relative;
+  border-radius: 2rem;
 }
 
 .tech-stack-list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  margin: 1rem;
 }
 
 .tech-stack-item {
   font-size: 0.6rem;
   margin: 0.1rem;
-  height: min-content;
   text-align: center;
   padding: 0.25rem 0.5rem;
   background-color: #ffbe5e;
@@ -191,5 +192,84 @@ export default {
   color: white;
   font-style: 'Red Hat Text';
   font-weight: 900;
+  z-index: 5;
+}
+
+.expand-button-container {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.down-arrow {
+  height: 2rem;
+  width: 2rem;
+  background-color: white;
+  box-shadow: 0 0.5rem 0.8rem 0 rgba(0, 0, 0, 0.212);
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+  transition: transform 0.25s ease;
+}
+
+.down-arrow::before {
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  height: 0.75rem;
+  top: 0.75rem;
+  left: 0.65rem;
+  background-color: black;
+  transform: rotate(-45deg);
+  border-radius: 1rem;
+}
+.down-arrow::after {
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  height: 0.75rem;
+  right: 0.65rem;
+  top: 0.75rem;
+  background-color: black;
+  transform: rotate(45deg);
+  border-radius: 1rem;
+}
+
+.up-arrow {
+  height: 2rem;
+  width: 2rem;
+  background-color: white;
+  box-shadow: 0 -0.5rem 0.8rem 0 rgba(0, 0, 0, 0.212);
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(180deg);
+  z-index: 0;
+  transition: transform 0.25s ease;
+}
+
+.up-arrow::before {
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  height: 0.75rem;
+  top: 0.75rem;
+  left: 0.65rem;
+  background-color: black;
+  transform: rotate(-45deg);
+  border-radius: 1rem;
+}
+.up-arrow::after {
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  height: 0.75rem;
+  right: 0.65rem;
+  top: 0.75rem;
+  background-color: black;
+  transform: rotate(45deg);
+  border-radius: 1rem;
 }
 </style>
