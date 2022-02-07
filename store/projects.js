@@ -49,6 +49,26 @@ export const state = () => ({
       ],
       expanded: false,
     },
+    {
+      id: 4,
+      name: 'Jungle',
+      image:
+        'https://raw.githubusercontent.com/stewanoya/jungle-rails/master/docs/products.png',
+      desc: 'A mini e-commerce application built with Rails 4.2 for purposes of learning Rails by example. The project features stripe integration with a seperate admin dashboard.',
+      github: 'https://github.com/stewanoya/jungle-rails',
+      techStack: ['Ruby', 'Rails', 'Stripe API', 'PSQL'],
+      expanded: false,
+    },
+    {
+      id: 5,
+      name: 'TinyApp',
+      image:
+        'https://raw.githubusercontent.com/stewanoya/tinyapp/master/docs/urls-page.png',
+      desc: 'TinyApp is a TinyURL/Bit.ly clone that takes long URLs and condenses them to a more digestable size. The shorter URLs are great for social media, where you have to pack a bunch of links into a smaller space.',
+      github: 'https://github.com/stewanoya/tinyapp',
+      techStack: ['Node', 'Express', 'EJS', 'Cookie Session', 'bcrypt'],
+      expanded: false,
+    },
   ],
 })
 
