@@ -3,7 +3,17 @@
 export const state = () => ({
   projectList: [
     {
-      id: 1,
+      id: 6,
+      name: 'Citadels Online',
+      image:
+        'https://raw.githubusercontent.com/stewanoya/card-game/main/assets/Screenshot%202023-01-27%20at%209.55.05%20AM.png',
+      github: null,
+      desc: "Citadels Online is based on the board game Citadels. My friends and I would get together and play this game quite frequently. However, once the pandemic started, and we weren't able to get together, I made this game as a replacement to the board game. The repo is private, but I'm happy to grant access upon request.",
+      techStack: ['Vue', 'Vite', 'NaiveUI', 'Express', 'Node'],
+      expanded: false,
+    },
+    {
+      id: 5,
       name: 'sQuiz Game',
       image:
         'https://raw.githubusercontent.com/stewanoya/sQuiz-Game/master/docs/homepage.png',
@@ -13,7 +23,7 @@ export const state = () => ({
       expanded: false,
     },
     {
-      id: 2,
+      id: 4,
       name: 'willow',
       image:
         'https://raw.githubusercontent.com/HabonH/Final-Demo/main/docs/dashboard-desktop.png',
@@ -50,7 +60,7 @@ export const state = () => ({
       expanded: false,
     },
     {
-      id: 4,
+      id: 2,
       name: 'Jungle',
       image:
         'https://raw.githubusercontent.com/stewanoya/jungle-rails/master/docs/products.png',
@@ -60,7 +70,7 @@ export const state = () => ({
       expanded: false,
     },
     {
-      id: 5,
+      id: 1,
       name: 'TinyApp',
       image:
         'https://raw.githubusercontent.com/stewanoya/tinyapp/master/docs/urls-page.png',
