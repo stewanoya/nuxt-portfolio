@@ -15,7 +15,7 @@ export default {}
 .about__main-container {
   display: flex;
   padding-top: 80px;
-  height: 100vh;
+  height: calc(100vh - 44px);
   overflow-y: scroll;
 }
 

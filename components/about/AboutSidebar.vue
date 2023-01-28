@@ -84,7 +84,7 @@ export default {
   border-radius: 10px;
 }
 .sidebar__container {
-  height: 100%;
+  height: auto;
   display: flex;
   padding-inline: 1rem;
   flex-direction: column;
