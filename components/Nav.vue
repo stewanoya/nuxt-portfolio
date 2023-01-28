@@ -16,12 +16,21 @@
           :class="{ navSelected: selected === index }"
         ></div>
       </nuxt-link>
+      <li class="nav-item">
+        <a href="https://linkedin.com/in/stewanoya" target="_blank">LinkedIn</a>
+      </li>
     </ul>
   </nav>
 </template>
 
 <script>
 export default {
+  mounted() {
+    let path = window.location.pathname
+    if (path.includes('about')) {
+      this.$store.commit('nav/setSelected', 1)
+    }
+  },
   computed: {
     navList() {
       return this.$store.state.nav.navList
@@ -45,6 +54,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0);
   animation: slideinNav 2s ease-in-out;
 }
 
@@ -87,7 +97,7 @@ export default {
   height: 0.25rem;
   border-radius: 20px;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 1.25rem;
   z-index: -1;
   animation: grow 0.2s ease-in-out;
 }

@@ -7,6 +7,9 @@
         :key="project.id"
       >
         <div class="project-header">
+          <div v-if="project.active" class="active-work shadow">
+            Actively developing!
+          </div>
           <h1 class="project-title">{{ project.name }}</h1>
           <img class="project-image" :src="project.image" />
         </div>
@@ -15,15 +18,27 @@
             project.expanded ? 'project-body-show' : 'project-body-hidden'
           "
         >
-          <a
-            :href="project.github"
-            class="project-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><img
-              class="github-icon"
-              src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-          /></a>
+          <div class="flex items-center justify-center gap-6">
+            <a
+              v-if="project.github"
+              :href="project.github"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="github-icon"
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+            /></a>
+            <a
+              v-if="project.demoUrl"
+              :href="project.demoUrl"
+              class="demo-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Demo
+            </a>
+          </div>
           <p class="project-description">{{ project.desc }}</p>
         </div>
         <div class="project-footer">
@@ -64,6 +79,17 @@ export default {
 </script>
 
 <style scoped>
+.active-work {
+  position: absolute;
+  transform: rotateZ(-35deg);
+  left: -180px;
+  z-index: 10;
+  top: 35px;
+  width: 30rem;
+  background-color: #ffbe5e;
+  text-align: center;
+  font-size: 12px;
+}
 .project-container {
   background-color: #ffd9a0;
   height: min-content;
@@ -84,18 +110,21 @@ export default {
   height: fit-content;
   min-height: 13rem;
   border-radius: 2rem;
+  max-width: 25rem;
   position: relative;
   flex-basis: 30%;
 }
 
 .project-header {
   width: 100%;
+  overflow: hidden;
   height: 9.5rem;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   border-radius: 2rem 2rem 0 0;
+  z-index: 1;
 }
 
 .project-title {
@@ -115,7 +144,9 @@ export default {
   width: 100%;
   height: auto;
   position: absolute;
+  background-size: cover;
   top: 0;
+  z-index: 1;
 }
 
 .project-header::before {
@@ -124,7 +155,16 @@ export default {
   height: 100%;
   width: 100%;
   background-color: rgba(3, 4, 15, 0.404);
-  z-index: 1;
+  z-index: 2;
+}
+
+.project-header::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 0;
 }
 
 .project-body-show {
@@ -155,15 +195,25 @@ export default {
   font-weight: 500;
   color: #413f4c;
   margin-bottom: 1rem;
+  white-space: break-spaces;
 }
 
 .project-link {
   color: #ffbe5e;
   width: max-content;
-  display: block;
-  margin: 0.5rem auto;
-  margin-top: -1rem;
 }
+
+.demo-link {
+  font-size: 12px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  color: #060411;
+  aspect-ratio: 1;
+  border-radius: 5000rem;
+  background: rgb(189, 184, 219);
+}
+
 .github-icon {
   width: 3rem;
   aspect-ratio: 1;
@@ -271,5 +321,14 @@ export default {
   background-color: black;
   transform: rotate(45deg);
   border-radius: 1rem;
+}
+
+@media (max-width: 760px) {
+  .project-card {
+    flex-basis: 100%;
+  }
+  .project-container {
+    padding-inline: 1rem;
+  }
 }
 </style>

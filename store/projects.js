@@ -3,13 +3,43 @@
 export const state = () => ({
   projectList: [
     {
+      id: 8,
+      name: 'homr',
+      image: '',
+      github: null,
+      demoUrl: null,
+      desc: "homr is my biggest project yet. I'm not prepared to publicly give out all the details yet, as it is still in the early stages, but I am happy to discuss this project further upon request.",
+      techStack: [
+        '.NET 6',
+        'SQL Server',
+        'React Native',
+        'Postfix',
+        'Dovecot',
+        'SSMS',
+      ],
+      expanded: false,
+      active: true,
+    },
+    {
+      id: 7,
+      name: 'PDF Filler',
+      image:
+        'https://raw.githubusercontent.com/stewanoya/assets/main/pdffiller2.png',
+      github: null,
+      demoUrl: 'https://pdffiller.app',
+      desc: 'PDF Filler started as a small node project that was built as a request from a friend that needed a business need met. I later built it into a full application so his company could use  \n\n PDF Filler takes a set of Excel data, a fillable form, and generates hundreds of filled forms with the data from the excel sheet. \n\n The app is in production, and can be used for free with an account. The repo is private, but I am happy to provide access upon request',
+      techStack: ['Angular', 'Firebase', 'MaterialUI', 'Stripe', 'TypeScript'],
+      expanded: false,
+    },
+    {
       id: 6,
       name: 'Citadels Online',
       image:
-        'https://raw.githubusercontent.com/stewanoya/card-game/main/assets/Screenshot%202023-01-27%20at%209.55.05%20AM.png',
+        'https://raw.githubusercontent.com/stewanoya/card-game/main/card-game-client-web/src/assets/Screenshot%202023-01-27%20114019.png',
       github: null,
-      desc: "Citadels Online is based on the board game Citadels. My friends and I would get together and play this game quite frequently. However, once the pandemic started, and we weren't able to get together, I made this game as a replacement to the board game. The repo is private, but I'm happy to grant access upon request.",
-      techStack: ['Vue', 'Vite', 'NaiveUI', 'Express', 'Node'],
+      demoUrl: 'https://inquisitive-tarsier-d80faa.netlify.app/',
+      desc: "Citadels Online is based on the board game Citadels. My friends and I would get together and play this game quite frequently. However, once the pandemic started, and we weren't able to get together, I made this game as a replacement to the board game. The game is still a work in progress. The repo is private, but I'm happy to grant access upon request. \n\n For best demo experience, open 2 tabs and play a couple turns against yourself.",
+      techStack: ['Vue', 'Vite', 'NaiveUI', 'Express', 'Node', 'WebSockets'],
       expanded: false,
     },
     {

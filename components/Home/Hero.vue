@@ -2,24 +2,27 @@
   <main class="hero-container">
     <div class="first-name">
       STEW
-      <span class="adjectives-first">
-        <p>Developer</p>
+      <div class="adjectives-first">
+        <p style="white-space: nowrap">Software Developer</p>
         <p>Educator</p>
         <p>Mentor</p>
-      </span>
+      </div>
     </div>
     <div class="last-name">
-      <span class="adjectives-last">
+      <div class="adjectives-last">
         <p>Learner</p>
         <p>Coach</p>
         <p>Creator</p>
-      </span>
+      </div>
       ANOYA
-      <!-- <div class="left-big-circle shadow-xl"></div>
-    <div class="left-small-circle"></div> -->
     </div>
     <div class="right-big-circle shadow-xl"></div>
     <div class="right-small-circle"></div>
+    <div class="subheading mt-20 px-6 py-2 round shadow">
+      👋 Welcome! Check out my personal projects below, or head to my
+      <a style="text-decoration: underline" href="/about">about</a> page to get
+      in touch.
+    </div>
     <div class="bottom-circle">
       <h1 class="projects-title">PROJECTS</h1>
     </div>
@@ -30,6 +33,7 @@
 .hero-container {
   height: calc(100vh - 5rem);
   width: 100%;
+  margin-top: 100px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -78,7 +82,7 @@
     transform: translate(0);
   }
   50% {
-    transform: translate(-10px, 5px);
+    transform: translate(-15px, 10px);
   }
   100% {
     transform: translate(0px, 0px);
@@ -173,7 +177,14 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  animation: fadeinUp 2s ease-in-out;
+  transform: translateY(10rem);
+  animation: fadeinUp 2s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.subheading {
+  animation: fade 2s ease-in-out;
+  background-color: rgb(189, 184, 219);
 }
 
 @keyframes fadeinUp {
@@ -189,7 +200,28 @@
   font-family: 'Red Hat Text';
   font-weight: 900;
   color: white;
-  font-size: 6rem;
+  font-size: 5rem;
   margin-top: -1rem;
+}
+
+@media (max-width: 760px) {
+  .first-name,
+  .last-name {
+    font-size: 4rem;
+    width: 20rem;
+  }
+
+  .adjectives-first,
+  .adjectives-last {
+    font-size: 0.75rem;
+  }
+
+  .subheading {
+    margin-inline: 14px;
+  }
+  .projects-title {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
 }
 </style>
