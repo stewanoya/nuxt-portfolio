@@ -223,25 +223,27 @@ export default {
   background-color: white;
   position: relative;
   border-radius: 2rem;
+  min-height: 5rem;
 }
 
 .tech-stack-list {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  height: 100%;
   margin: 1rem;
 }
 
 .tech-stack-item {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   margin: 0.1rem;
+  padding: 0.25rem;
   text-align: center;
   padding: 0.25rem 0.5rem;
   background-color: #ffbe5e;
   border-radius: 0.85rem;
   color: white;
   font-style: 'Red Hat Text';
-  font-weight: 900;
+  font-weight: 700;
   z-index: 5;
 }
 
@@ -258,7 +260,7 @@ export default {
   height: 2rem;
   width: 2rem;
   background-color: white;
-  box-shadow: 0 0.5rem 0.8rem 0 rgba(0, 0, 0, 0.212);
+  /* box-shadow: 0 0.5rem 0.8rem 0 rgba(0, 0, 0, 0.212); */
   border-radius: 50%;
   position: relative;
   z-index: 0;
@@ -292,7 +294,7 @@ export default {
   height: 2rem;
   width: 2rem;
   background-color: white;
-  box-shadow: 0 -0.5rem 0.8rem 0 rgba(0, 0, 0, 0.212);
+  /* box-shadow: 0 -0.5rem 0.8rem 0 rgba(0, 0, 0, 0.212); */
   border-radius: 50%;
   position: relative;
   transform: rotate(180deg);

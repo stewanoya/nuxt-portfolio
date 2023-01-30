@@ -27,11 +27,10 @@ export default {}
 
 @media (max-width: 850px) {
   .about__main-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
   }
   .sidebar {
-    margin-top: 1rem;
     width: 100%;
     height: auto;
   }

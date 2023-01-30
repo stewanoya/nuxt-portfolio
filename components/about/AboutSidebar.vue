@@ -108,6 +108,29 @@ export default {
   background-color: white;
 }
 
+.skillbar:after {
+  content: '';
+  width: 100%;
+  height: 8px;
+  border-radius: 1000rem;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  transform-origin: right;
+  animation: shrink 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scaleX(100%);
+  }
+
+  to {
+    transform: scaleX(0%);
+  }
+}
+
 .skillbar__filled {
   position: absolute;
   left: 0;
