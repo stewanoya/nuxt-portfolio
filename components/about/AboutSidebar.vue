@@ -43,16 +43,16 @@ export default {
   data() {
     return {
       skills: [
-        { name: 'JavaScript', skill: '80%' },
-        { name: 'C#', skill: '60%' },
-        { name: 'SQL', skill: '75%' },
-        { name: 'Angular', skill: '65%' },
+        { name: 'JavaScript', skill: '85%' },
+        { name: 'Angular', skill: '85%' },
+        { name: 'C#', skill: '75%' },
+        { name: 'TypeScript', skill: '75%' },
+        { name: '.NET', skill: '75%' },
         { name: 'Vue', skill: '70%' },
+        { name: 'SQL', skill: '70%' },
         { name: 'React', skill: '60%' },
-        { name: 'TypeScript', skill: '60%' },
         { name: 'Flutter', skill: '50%' },
-        { name: '.NET', skill: '65%' },
-        { name: 'React Native', skill: '40%' },
+        { name: 'React Native', skill: '50%' },
       ],
     }
   },
