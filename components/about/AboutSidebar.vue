@@ -68,7 +68,7 @@ export default {
         return
       }
 
-      window.location = 'mailto:stewartanoya@gmail.com'
+      window.location = 'mailto:stew@anoya.ca'
     },
   },
 }

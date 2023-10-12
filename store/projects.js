@@ -27,8 +27,15 @@ export const state = () => ({
         'https://raw.githubusercontent.com/stewanoya/assets/main/pdffiller2.png',
       github: null,
       demoUrl: 'https://pdffiller.app',
-      desc: 'PDF Filler started as a small node project that was built as a request from a friend that needed a business need met. I later built it into a full application so his company could use  \n\n PDF Filler takes a set of Excel data, a fillable form, and generates hundreds of filled forms with the data from the excel sheet. \n\n The app is in production, and can be used for free with an account. The repo is private, but I am happy to provide access upon request',
-      techStack: ['Angular', 'Firebase', 'MaterialUI', 'Stripe', 'TypeScript'],
+      desc: 'PDF Filler started as a small node project that was built as a request from a friend that needed a business need met. I later built it into a full application so his company could use it on demand. \n\n PDF Filler takes a set of Excel data, a fillable form, and generates hundreds of filled forms with the data from the excel sheet. \n\n The app is in production, and can be used for free with an account. The repo is private, but I am happy to provide access upon request',
+      techStack: [
+        'Angular',
+        'Node',
+        'Firebase',
+        'MaterialUI',
+        'Stripe',
+        'TypeScript',
+      ],
       expanded: false,
     },
     {
