@@ -17,6 +17,9 @@
         ></div>
       </nuxt-link>
       <li class="nav-item">
+        <a href="https://blog.anoya.ca">Blog</a>
+      </li>
+      <li class="nav-item">
         <a href="https://linkedin.com/in/stewanoya" target="_blank">LinkedIn</a>
       </li>
     </ul>
