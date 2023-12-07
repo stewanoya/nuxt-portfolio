@@ -74,7 +74,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20rem;
+  width: 50%;
+  min-width: 25rem;
+  max-width: 35rem;
   background-color: red;
   padding: 1.5rem 6rem;
   background-color: #ffbe5e;
