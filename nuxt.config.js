@@ -4,8 +4,9 @@ export default {
     title: 'Stew Anoya - Developer',
     meta: [
       { charset: 'utf-8' },
+      {name: 'google-site-verification', content: 'PCww4SoN7QdctcfGg2hTqOCtkVcpnWTONBj7U6cW1RQ'},
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'The personal portfolio of software developer Stew Anoya' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
