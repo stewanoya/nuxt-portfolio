@@ -4,21 +4,17 @@ export const state = () => ({
   projectList: [
     {
       id: 8,
-      name: 'homr',
-      image: '',
-      github: null,
-      demoUrl: null,
-      desc: "homr is my biggest project yet. I'm not prepared to publicly give out all the details yet, as it is still in the early stages, but I am happy to discuss this project further upon request.",
+      name: 'Multiplication Squares Online',
+      image: 'https://raw.githubusercontent.com/stewanoya/assets/main/m-squares.png',
+      github: 'https://github.com/stewanoya/multiplication-squares',
+      demoUrl: 'https://m-squares.anoya.ca',
+      desc: "A game built to be used by classroom teachers to have elementary based students practice their multiplication tables. I used to play this game on paper with my students and decided to create this application to help other teachers that were dealing with printing the sheet out everytime they wanted to play. Also my game allows for more flexibility and more difficult multiplication questions.",
       techStack: [
-        '.NET 6',
-        'SQL Server',
-        'React Native',
-        'Postfix',
-        'Dovecot',
-        'SSMS',
+        'Angular',
+        'RxJs',
+        'MaterialUI',
       ],
       expanded: false,
-      active: true,
     },
     {
       id: 7,
@@ -30,6 +26,7 @@ export const state = () => ({
       desc: 'PDF Filler started as a small node project that was built as a request from a friend that needed a business need met. I later built it into a full application so his company could use it on demand. \n\n PDF Filler takes a set of Excel data, a fillable form, and generates hundreds of filled forms with the data from the excel sheet. \n\n The app is in production, and can be used for free with an account. The repo is private, but I am happy to provide access upon request',
       techStack: [
         'Angular',
+        'RxJs',
         'Node',
         'Firebase',
         'MaterialUI',
