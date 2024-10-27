@@ -3,8 +3,24 @@
 export const state = () => ({
   projectList: [
     {
+      id: 9,
+      name: 'Play Call Tracker',
+      image: 'https://raw.githubusercontent.com/stewanoya/assets/main/play-tracker.png',
+      github: null,
+      demoUrl: 'https://elaborate-halva-5f5dcd.netlify.app/',
+      desc: "A web app built to be used by Football coaches to track game statistics as they make calls on the field. I built this for myself as I've been a community coach for many years, and was looking to solve the problem of having someone write down play calls and results as the game went on.",
+      techStack: [
+        'Angular',
+        'RxJs',
+        'MaterialUI',
+        '.NET 8',
+        'MSSQL'
+      ],
+      expanded: false,
+    },
+    {
       id: 8,
-      name: 'Multiplication Squares Online',
+      name: 'Multiplication Squares',
       image: 'https://raw.githubusercontent.com/stewanoya/assets/main/m-squares.png',
       github: 'https://github.com/stewanoya/multiplication-squares',
       demoUrl: 'https://m-squares.anoya.ca',
