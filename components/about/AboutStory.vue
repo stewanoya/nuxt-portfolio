@@ -27,9 +27,8 @@
       <br />
       <br />
 
-      I spent 2 hours working at Pathways before moving to my current role as a Software Developer with Scotiabank, where I'm a part of a team
-      working on modernizing the automotive business applications.
-      <strong>love</strong> it.
+      I spent 2 years working at Pathways before moving to my current role as a Software Developer at Scotiabank, where I'm a part of a team
+      working on modernizing the automotive finance business applications.
     </p>
   </div>
 </template>

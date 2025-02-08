@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt build --openssl-legacy-provider",
     "start": "nuxt start",
     "generate": "SET NODE_OPTIONS=--openssl-legacy-provider && nuxt generate",
     "lint:prettier": "prettier --check .",

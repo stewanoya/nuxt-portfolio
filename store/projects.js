@@ -7,7 +7,7 @@ export const state = () => ({
       name: 'Play Call Tracker',
       image: 'https://raw.githubusercontent.com/stewanoya/assets/main/play-tracker.png',
       github: null,
-      demoUrl: 'https://elaborate-halva-5f5dcd.netlify.app/',
+      demoUrl: 'https://playtrack.ca/',
       desc: "A web app built to be used by Football coaches to track game statistics as they make calls on the field. I built this for myself as I've been a community coach for many years, and was looking to solve the problem of having someone write down play calls and results as the game went on.",
       techStack: [
         'Angular',
@@ -56,8 +56,8 @@ export const state = () => ({
       name: 'Citadels Online',
       image:
         'https://raw.githubusercontent.com/stewanoya/card-game/main/card-game-client-web/src/assets/Screenshot%202023-01-27%20114019.png',
-      github: null,
-      demoUrl: 'https://inquisitive-tarsier-d80faa.netlify.app/',
+      github: 'https://github.com/stewanoya/card-game/tree/main',
+      demoUrl: null,
       desc: "Citadels Online is based on the board game Citadels. My friends and I would get together and play this game quite frequently. However, once the pandemic started, and we weren't able to get together, I made this game as a replacement to the board game. The game is still a work in progress. The repo is private, but I'm happy to grant access upon request. \n\n For best demo experience, open 2 tabs and play a couple turns against yourself.",
       techStack: ['Vue', 'Vite', 'NaiveUI', 'Express', 'Node', 'WebSockets'],
       expanded: false,

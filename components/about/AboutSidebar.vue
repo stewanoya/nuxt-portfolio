@@ -19,8 +19,8 @@
     </ul>
     <p style="text-align: center; font-size: 14px">
       Software Developer @
-      <span @click="navigate('pathways')" class="organization"
-        >Pathways To Education</span
+      <span @click="navigate('bns')" class="organization"
+        >Scotiabank</span
       >
     </p>
     <div class="skills__container">
@@ -44,12 +44,12 @@ export default {
     return {
       skills: [
         { name: 'JavaScript', skill: '85%' },
-        { name: 'Angular', skill: '85%' },
-        { name: 'C#', skill: '75%' },
-        { name: 'TypeScript', skill: '75%' },
-        { name: '.NET', skill: '75%' },
+        { name: 'Angular', skill: '80%' },
+        { name: 'C#', skill: '90%' },
+        { name: 'TypeScript', skill: '85%' },
+        { name: '.NET', skill: '85%' },
         { name: 'Vue', skill: '70%' },
-        { name: 'SQL', skill: '70%' },
+        { name: 'SQL', skill: '75%' },
         { name: 'React', skill: '60%' },
         { name: 'Flutter', skill: '50%' },
         { name: 'React Native', skill: '50%' },
@@ -63,8 +63,8 @@ export default {
         return
       }
 
-      if (type === 'pathways') {
-        window.open('https://www.pathwaystoeducation.ca/', '_blank')
+      if (type === 'bns') {
+        window.open('https://www.scotiabank.com/', '_blank')
         return
       }
 
